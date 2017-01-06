@@ -1,1 +1,3 @@
-console.log("Is loaded");
+$.get( "/data/station_info.json", function( data ) {
+  alert( data );
+});

@@ -6,6 +6,10 @@ router.get('/station_info', function(req, res) {
   res.setHeader('content-type', 'application/json');
   res.sendFile(__dirname+'/public/data/station_info.json');
 });
+router.get('/status', function(req, res) {
+  res.setHeader('content-type', 'application/json');
+  res.sendFile(__dirname+'/public/data/current.json');
+});
 router.get('/station',function(req,res){
     res.send(req.query.id);
 });

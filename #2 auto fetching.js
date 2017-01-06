@@ -3,12 +3,8 @@ var mysql = require('mysql');
 var fs = require('fs');
 var zlib = require('zlib');
 var dataInJson;
-var connection = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'edison',
-    password: 'youbike123',
-    database: 'YouBike'
-});
+var dbsc = require('./secret');
+var connection = mysql.createConnection(dbsc);
 connection.connect();
 var basicURL = 'http://api.wunderground.com/api/';
 var secondPURL = '/conditions/q/pws:';

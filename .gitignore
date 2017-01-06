@@ -1,2 +1,4 @@
 node_modules/
 yarn.lock
+secret.js
+test.js

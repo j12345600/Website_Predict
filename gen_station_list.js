@@ -2,12 +2,8 @@ var fs = require('fs');
 var mysql=require('mysql');
 var moment= require('moment');
 moment.defaultFormat='YYYY-MM-DD HH:mm:ss';
-var connection = mysql.createConnection({
-   host: '127.0.0.1',
-   user: 'edison',
-   password: 'youbike123',
-   database: 'YouBike'
-});
+var dbsc = require('./secret');
+var connection = mysql.createConnection(dbsc);
 connection.connect();
 
 query = "SELECT sno, sname, lat, lng FROM Station_Info WHERE 1";

@@ -14,11 +14,11 @@ query = "SELECT sno, sname, lat, lng FROM Station_Info WHERE 1";
 connection.query(query,function(err,rows){
     if(err) console.log(err);
     else if(rows!=undefined){
-        fs.writeFile('/public/data/station_info.json',JSON.stringify(rows),'utf-8',(err)=>{
+        fs.writeFile(__dirname+'/public/data/station_info.json',JSON.stringify(rows),'utf-8',(err)=>{
             if(err) throw err;
             console.log('Station Info Is Saved!!'+moment().format());
         });
     }
     else console.log('rows = undefined');
-    connection.release();
 });
+connection.end();

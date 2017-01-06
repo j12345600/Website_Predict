@@ -22,7 +22,7 @@ query = "SELECT sno, sname, lat, lng FROM Station_Info WHERE 1";
 connection.query(query,function(err,rows){
     if(err) console.log(err);
     else if(rows!=undefined){
-        fs.writeFile(__dirname+'/public/data/station_info.json',JSON.stringify(processArray(rows)),'utf-8',(err)=>{
+        fs.writeFile(__dirname+'/public/data/station_info.js',"function get_locations(){return "+JSON.stringify(processArray(rows))+";}",'utf-8',(err)=>{
             if(err) throw err;
             console.log('Station Info Is Saved!!'+moment().format());
         });

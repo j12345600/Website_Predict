@@ -1,0 +1,17 @@
+  #map data-locations="#{@locations}" data-clicked="#{image_url('clicked_icon1')}" data-unclick="#{image_url('unclick_icon1')}" data-cluster="#{image_url('cluster')}"
+  #image_path data-good="#{image_url('cond_good')}" data-mid="#{image_url('cond_mid')}" data-bad="#{image_url('cond_bad')}" data-blank_sunny="#{image_url('blank_sunny')}" data-mostly_cloudy="#{image_url('mostly_cloudy')}" data-raining="#{image_url('raining')}" data-scatterd_clouds="#{image_url('scatterd_clouds')}" data-thunderstorm="#{image_url('thunderstorm')}"
+
+ //= image_tag('star_empty.png', size: "40x40")
+
+  //= image_tag('nearby.png', size: "40x40")
+
+//=image_tag('star_empty',size:'50x50',:class => 'star')
+
+=image_tag('cond_mid',size:'80x80')
+
+ =image_tag('scatterd_clouds',size:'80x80')
+ <link rel="stylesheet" href="styles/homes.css">
+ <script src="js/jquery-3.1.1.min.js"></script>
+
+ <scritp src="js/google_map.js"></scritp>
+   <script src="js/app.js"></script>

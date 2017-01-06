@@ -1,0 +1,344 @@
+﻿@import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+
+#map {
+	min-width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+@media screen and (max-width: 768px) {
+	font-size: 14px;
+}
+
+@media screen and (max-width: 515px) {
+	font-size: 14px;
+}
+
+#place_info {
+	display: none;
+	background-color: #fff;
+	min-width: 100%;
+	height: 30vh;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	padding: 15px;
+}
+
+#place_info .place_name {
+	color: #467C9C;
+	padding: 5px;
+	font-size: 30px;
+}
+
+#place_info .place_addr {
+	color: #467C9C;
+	padding: 5px;
+	font-size: 20px;
+}
+
+#content {
+	border-radius: 15px;
+	display: none;
+	padding: 15px;
+	width: 23.4%;
+	height: auto;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+	#content {
+		bottom: 0px;
+		right: 0px;
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	#content {
+		width: 80%;
+	}
+}
+
+#content .header #location_name {
+	color: #ABCEE2;
+	font-size: 20px;
+}
+
+#content .header .star {
+	float: right;
+	font-size: 26px;
+	color: black;
+}
+
+#content .header #location_addr {
+	margin-top: 10px;
+	color: #ABCEE2;
+}
+
+#content .infos_img {
+	padding: 15px;
+}
+
+#content .infos_img .bike_info {
+	width: 44%;
+	margin-left: 15px;
+	display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+	#content .infos_img .bike_info {
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	#content .infos_img .bike_info {
+		margin: 5px 0 0 10px;
+		width: 40%;
+	}
+}
+
+#content .infos_img .bike_info .bike_img {
+	display: inline-block;
+	margin: 15px 5px 0 0;
+}
+
+#content .infos_img .bike_info .bike_info_content {
+	display: inline-block;
+}
+
+#content .infos_img .bike_info .bike_info_content .avaliable_bike {
+	font-size: 30px;
+}
+
+#content .infos_img .bike_info .bike_info_content .total_bike {
+	font-size: 20px;
+}
+
+#content .infos_img .weather_info {
+	width: 44%;
+	margin: 0 15px;
+	display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+	#content .infos_img .weather_info {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	#content .infos_img .weather_info {
+		margin: 5px 0 0 10px;
+		width: 40%;
+	}
+}
+
+#content .infos_img .weather_info .weather_img {
+	display: inline-block;
+	margin: 15px 5px 0 0;
+}
+
+#content .infos_img .weather_info .weather_value {
+	display: inline-block;
+	font-size: 30px;
+}
+
+#content .infos_img .datetime {
+	margin: 15px 0 0 0;
+	text-align: center;
+}
+
+#content .infos_img .tab {
+	margin: auto;
+	font-size: 0;
+}
+
+#content .infos_img .tab .mins, #content .infos_img .tab .hurs {
+	font-size: 16px;
+	width: 14%;
+	display: inline-block;
+}
+
+#content .infos_img .tab .tabe_active {
+	background-color: #ABCEE2;
+}
+
+.sidebar {
+	width: 400px;
+	height: 100%;
+	background-color: #97C9B2;
+	position: fixed;
+	top: 0;
+	left: -400px;
+	transition: left 0.3s;
+}
+
+.sidebar .tag {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	background-color: red;
+	width: 1em;
+	padding: 0.5em;
+	font-size: 25px;
+	position: absolute;
+	right: -2em;
+	border-radius: 0 10% 10% 0;
+}
+
+.sidebar .links {
+	display: inline-block;
+}
+
+.sidebar .links a {
+	display: block;
+	width: 300px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 20px;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.sidebar .links img {
+	width: 100px;
+	height: 100px;
+}
+
+.sidebar .side_tabs {
+	width: 60px;
+	height: 100%;
+	display: inline-block;
+	float: right;
+}
+
+.sidebar .side_tabs .tab_defalut {
+	background-size: 60px 100%;
+	background-repeat: no-repeat;
+	background-color: white;
+	width: 60px;
+	height: 50%;
+}
+
+.sidebar .side_tabs .collections {
+	background-image: url("leftPanelWhite.png");
+}
+
+.sidebar .side_tabs .collections .images {
+	text-align: center;
+	position: relative;
+}
+
+.sidebar .side_tabs .collections .images img {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.sidebar .side_tabs .nearby {
+	background-image: url("leftPanelGreen.png");
+}
+
+.sidebar .side_tabs .nearby .images {
+	text-align: center;
+	position: relative;
+}
+
+.sidebar .side_tabs .nearby .images img {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.show_side_bar {
+	left: 0px;
+}
+
+.shift_map {
+	left: 400px;
+}
+
+ul.tab {
+	width: 60%;
+}
+
+ul.tab li {
+	display: inline-block;
+	color: black;
+	text-align: center;
+	padding: 2.9% 16%;
+	background-color: #f1f1f1;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+.controls {
+	border: 1px solid transparent;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 42px;
+	outline: none;
+}
+
+#searchbox {
+	margin-left: 12px;
+	margin-top: 10px;
+}
+
+#searchbox #menu {
+	background-color: #fff;
+	font-size: 15px;
+	padding: 10px 11px 11px 13px;
+	text-overflow: ellipsis;
+}
+
+#searchbox #pac-input {
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	padding: 0px 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+	#searchbox #pac-input {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	#searchbox #pac-input {
+		width: 80%;
+	}
+}
+
+#searchbox #pac-input:focus {
+	border-color: #4d90fe;
+}
+
+#searchbox #pac-input .pac-container {
+	font-family: Roboto;
+}
+
+#searchbox #pac-input #type-selector {
+	color: #fff;
+	background-color: #4d90fe;
+	padding: 5px 11px 0px 11px;
+}
+
+#searchbox #pac-input #type-selector label {
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+body {
+	font-family: 'cwTeXHei', sans-serif;
+}

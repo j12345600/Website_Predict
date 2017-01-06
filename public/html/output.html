@@ -1,0 +1,48 @@
+<div class="map-container">
+  <div id="searchbox">
+    <spen class="controls" id="menu"><i class="fa fa-bars"></i></spen>
+    <input class="controls" id="pac-input" type="text" />
+  </div>
+</div>
+<div class="sidebar">
+  <div class="links">
+    <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
+    <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
+    <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
+  </div>
+  <div class="side_tabs">
+    <div class="collections tab_defalut">
+      <div class="images"></div>
+    </div>
+    <div class="nearby tab_defalut">
+      <div class="images"></div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="header">
+    <h1><span id="location_name">location.sname</span><div class="star">x</div></h1>
+    <p id="location_addr">location.addr</p>
+  </div>
+  <div class="infos_img">
+    <div class="bike_info">
+      <p class="bike_img"></p>
+      <p class="bike_info_content"><span class="avaliable_bike"> 25</span><span class="total_bike"> 30台</span></p>
+    </div>
+    <div class="weather_info">
+      <p class="weather_img"></p>
+      <p class="weather_value">23°C</p>
+    </div>
+    <p class="datetime">12:41:58 AM</p>
+    <input data-clock="mins" id="range" type="text" />
+    <ul class="tab">
+      <li class="mins tabe_active">分鐘</li>
+      <li class="hurs">小時</li>
+    </ul>
+  </div>
+</div>
+<div id="place_info">
+  <h1 class="place_name">name</h1>
+  <p class="place_addr">addr</p>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWAszS_4FgiRMsDHVpeVcp_5T2NvwDkg&libraries=places&callback=initMap"></script>

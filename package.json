@@ -1,0 +1,12 @@
+{
+  "name": "Website_Predict",
+  "version": "1.0.0",
+  "main": "#4 serverIOdev.js",
+  "repository": "https://github.com/j12345600/Website_Predict.git",
+  "author": "Edison Huang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "moment": "^2.17.1"
+  }
+}

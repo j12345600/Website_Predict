@@ -3,10 +3,6 @@ var router = express.Router();
 var mysql = require('promise-mysql');
 var dbsc = require('./secret');
 // define the home page route
-router.get('/station_info', function(req, res) {
-  res.setHeader('content-type', 'application/json');
-  res.sendFile(__dirname+'/public/data/station_info.json');
-});
 router.get('/status', function(req, res) {
   res.setHeader('content-type', 'application/json');
   res.sendFile(__dirname+'/public/data/current.json');

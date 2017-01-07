@@ -25,7 +25,7 @@ router.get('/get_info',function(req,res){
             cw.Temp, cw.Weather FROM Station_Info si,CurrentWeather cw WHERE si.sno = cw.sno AND si.sno =` + id.toString());
       }).then((rows)=>{
           if(rows!=undefined&&rows[0]!=undefined){
-            console.log(rows);
+            // console.log(rows);
             result.station_info['addr']=rows[0].addr;
             result.station_info['total']=parseInt(rows[0].total);
             result.current['count']=parseInt(rows[0].available);

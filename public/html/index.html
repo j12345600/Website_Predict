@@ -5,25 +5,13 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-     <link rel="stylesheet" href="styles/homes.css">
-     <link rel="stylesheet" href="styles/ion.rangeSlider.css">
-     <link rel="stylesheet" href="styles/normalize.css">
-    /*<style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>*/
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="styles/homes.css">
+    <link rel="stylesheet" href="styles/ion.rangeSlider.css">
+    <link rel="stylesheet" href="styles/ion.rangeSlider.skinHTML5.css">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="data/station_info.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/markerclusterer.js"></script>
     <script src="js/ion.rangeSlider.min.js"></script>
     <script src="js/google_map.js"></script>
@@ -32,40 +20,39 @@
   <body>
 
     <div class="map-container">
-
       <div id="searchbox">
         <spen class="controls" id="menu"><i class="fa fa-bars"></i></spen>
         <input class="controls" id="pac-input" type="text" />
       </div>
+
     </div>
     <div class="sidebar">
       <div class="links">
-        <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
-        <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
-        <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
+        <!-- <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a> -->
+        <!-- <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a>
+        <a href=""><img src="https://pbs.twimg.com/profile_images/638751551457103872/KN-NzuRl.png" /></a> -->
       </div>
       <div class="side_tabs">
         <div class="collections tab_defalut">
-          <div class="images"></div>
+          <div class="images"><img src='styles/star_empty.png' height="40" width="40"></img></div>
         </div>
         <div class="nearby tab_defalut">
-          <div class="images"></div>
+          <div class="images"><img src='styles/star_empty.png' height="40" width="40"></img></div>
         </div>
       </div>
     </div>
-    <div id="map"><div>
-    <div id="content">
+    <div id="content" style="z-index:1;">
       <div class="header">
         <h1><span id="location_name">location.sname</span><div class="star">x</div></h1>
         <p id="location_addr">location.addr</p>
       </div>
       <div class="infos_img">
         <div class="bike_info">
-          <p class="bike_img"></p>
+          <p class="bike_img"><img></img></p>
           <p class="bike_info_content"><span class="avaliable_bike"> 25</span><span class="total_bike"> 30台</span></p>
         </div>
         <div class="weather_info">
-          <p class="weather_img"></p>
+          <p class="weather_img"><img></img></p>
           <p class="weather_value">23°C</p>
         </div>
         <p class="datetime">12:41:58 AM</p>
@@ -80,8 +67,9 @@
       <h1 class="place_name">name</h1>
       <p class="place_addr">addr</p>
     </div>
+    <div id="map"><div>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWAszS_4FgiRMsDHVpeVcp_5T2NvwDkg&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWAszS_4FgiRMsDHVpeVcp_5T2NvwDkg&libraries=places&callback=initMap">
     </script>
   </body>
 </html>

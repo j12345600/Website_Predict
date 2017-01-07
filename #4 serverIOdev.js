@@ -6,8 +6,10 @@ var express = require('express');
 var path = require('path');
 var apis = require('./api.router');
 var app = express();
-var port = 2132;
+var helmet = require('helmet')
 
+var port = 2132;
+app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'public/html/index.html'));

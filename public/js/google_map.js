@@ -3,7 +3,7 @@ function initMap() {
   var locations = get_locations();
 
   var clicked_icon = {
-    url: 'styles/clicked_icon1',
+    url: 'styles/clicked_icon1.png',
     scaledSize: new google.maps.Size(50, 50), // scaled size
     origin: new google.maps.Point(0,0), // origin
     anchor: new google.maps.Point(0, 0) // anchor
@@ -65,51 +65,50 @@ function initMap() {
       return function(){
         $.ajax({
           method : 'get',
-          url : '/homes/get_info',
+          url : '/api/get_info',
           data : {
             location_id : marker.id,
           },
           success : function(response) {
             var time_index = 0;
             $('#content').show();
-            $('#location_name').text(response['station_info'].sname);
+            $('#location_name').text(locations[marker.id].sname);
             $('#location_addr').text(response['station_info'].addr);
             $('.total_bike').text("/"+response['station_info'].total+"台");
-            $('.avaliable_bike').text(response['weather'].count);
-            $('.weather_value').text(response['weather'].temp+"°C");
-            switch(response['weather'].status) {
+            $('.avaliable_bike').text(response['current'].count);
+            $('.weather_value').text(response['current'].temp+"°C");
+            switch(response['current'].status) {
               case 'Overcast':
               case 'Mostly Cloudy':
-                  $('.weather_img > img').attr('src' , $('#image_path').data('mostly_cloudy'))
+                  $('.weather_img > img').attr('src' , 'styles/mostly_cloudy.png')
               break;
               case 'Heavy Rain Showers':
               case 'Light Drizzle':
               case 'Rain':
               case 'Rain Showers':
               case 'Light Rain Showers':
-                $('.weather_img > img').attr('src' , $('#image_path').data('raining'))
+                $('.weather_img > img').attr('src' , 'styles/raining.png')
               break;
               case 'Partly Cloudy':
               case 'Scattered Clouds':
-                $('.weather_img > img').attr('src' , $('#image_path').data('scatterd_clouds'))
+                $('.weather_img > img').attr('src' , 'styles/scatterd_clouds.png')
               break;
               case 'Light Thunderstorms and Rain':
               case 'Heavy Thunderstorms and Rain':
               case 'Thunderstorm':
               case 'Thunderstorms and Rain':
-                $('.weather_img > img').attr('src' , $('#image_path').data('thunderstorm'))
+                $('.weather_img > img').attr('src' , 'styles/thunderstorm.png')
               break;
               default:
-                  $('.weather_img > img').attr('src' , $('#image_path').data('blank_sunny'))
+                  $('.weather_img > img').attr('src' , 'styles/blank_sunny.png')
             }
-            if(response['weather'].count < 5){
-                $('.bike_img > img').attr('src',$('#image_path').data('bad'))
-              }else if(response['weather'].count < 15){
-                $('.bike_img > img').attr('src',$('#image_path').data('mid'))
+            if(response['current'].count < 5){
+                $('.bike_img > img').attr('src','styles/cond_bad.png')
+              }else if(response['current'].count < 15){
+                $('.bike_img > img').attr('src','styles/cond_mid.png')
               }else{
-                $('.bike_img > img').attr('src',$('#image_path').data('good'))
+                $('.bike_img > img').attr('src','styles/cond_good.png')
             }
-
 
 
             for (var j = 0; j < markers.length; j++) {
@@ -131,11 +130,11 @@ function initMap() {
               $('.avaliable_bike').text(response['predict_info'][(from/5)].count);
               $('.datetime').text(moment(response['time_now']).add(from,'minutes').calendar());
               if(response['predict_info'][(from/5)].count < 5){
-                $('.bike_img > img').attr('src',$('#image_path').data('bad'))
+                $('.bike_img > img').attr('src','styles/cond_bad.png')
               }else if(response['predict_info'][(from/5)].count < 15){
-                $('.bike_img > img').attr('src',$('#image_path').data('mid'))
+                $('.bike_img > img').attr('src','styles/cond_mid.png')
               }else{
-                $('.bike_img > img').attr('src',$('#image_path').data('good'))
+                $('.bike_img > img').attr('src','styles/cond_good.png')
               }
             });
 
@@ -162,11 +161,11 @@ function initMap() {
                 $('.avaliable_bike').text(response['predict_info'][time_index+(from/5)].count);
                 $('.datetime').text(moment(response['time_now']).add(time_index/12,'hours').add(from,'minutes').calendar());
                 if(response['predict_info'][time_index+(from/5)].count < 5){
-                  $('.bike_img > img').attr('src',$('#image_path').data('bad'))
+                  $('.bike_img > img').attr('src','styles/cond_bad.png')
                 }else if(response['predict_info'][time_index+(from/5)].count < 15){
-                  $('.bike_img > img').attr('src',$('#image_path').data('mid'))
+                  $('.bike_img > img').attr('src','styles/cond_mid.png')
                 }else{
-                  $('.bike_img > img').attr('src',$('#image_path').data('good'))
+                  $('.bike_img > img').attr('src','styles/cond_good.png')
                 }
               });
             });
@@ -190,11 +189,11 @@ function initMap() {
                   $('.avaliable_bike').text(response['predict_info'][time_index+(from*12)].count)
                   $('.datetime').text(moment(response['time_now']).add(from,'hours').calendar());
                   if(response['predict_info'][time_index+(from*12)].count < 5){
-                    $('.bike_img > img').attr('src',$('#image_path').data('bad'))
+                    $('.bike_img > img').attr('src','styles/cond_bad.png')
                   }else if(response['predict_info'][time_index+(from*12)].count < 15){
-                    $('.bike_img > img').attr('src',$('#image_path').data('mid'))
+                    $('.bike_img > img').attr('src','styles/con_mid.png')
                   }else{
-                    $('.bike_img > img').attr('src',$('#image_path').data('good'))
+                    $('.bike_img > img').attr('src','styles/cond_good.png')
                   }
               });
             });

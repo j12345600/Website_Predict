@@ -127,11 +127,11 @@ function initMap() {
             $("#range").off("change");
             $("#range").on("change", function () {
               from = $(this).data("from");
-              $('.avaliable_bike').text(response['predict_info'][(from/5)].count);
+              $('.avaliable_bike').text(response['predict_info'][(from/5)]);
               $('.datetime').text(moment(response['time_now']).add(from,'minutes').calendar());
-              if(response['predict_info'][(from/5)].count < 5){
+              if(response['predict_info'][(from/5)] < 5){
                 $('.bike_img > img').attr('src','styles/cond_bad.png')
-              }else if(response['predict_info'][(from/5)].count < 15){
+              }else if(response['predict_info'][(from/5)] < 15){
                 $('.bike_img > img').attr('src','styles/cond_mid.png')
               }else{
                 $('.bike_img > img').attr('src','styles/cond_good.png')
@@ -158,11 +158,11 @@ function initMap() {
               $('.datetime').text(moment(response['time_now']).add(time_index/12,'hours').add(from,'minutes').calendar());
               $("#range").on("change", function () {
                 from = $(this).data("from");
-                $('.avaliable_bike').text(response['predict_info'][time_index+(from/5)].count);
+                $('.avaliable_bike').text(response['predict_info'][time_index+(from/5)]);
                 $('.datetime').text(moment(response['time_now']).add(time_index/12,'hours').add(from,'minutes').calendar());
-                if(response['predict_info'][time_index+(from/5)].count < 5){
+                if(response['predict_info'][time_index+(from/5)] < 5){
                   $('.bike_img > img').attr('src','styles/cond_bad.png')
-                }else if(response['predict_info'][time_index+(from/5)].count < 15){
+                }else if(response['predict_info'][time_index+(from/5)] < 15){
                   $('.bike_img > img').attr('src','styles/cond_mid.png')
                 }else{
                   $('.bike_img > img').attr('src','styles/cond_good.png')
@@ -186,12 +186,12 @@ function initMap() {
               $("#range").off("change");
               $("#range").on("change", function () {
                   from = $(this).data("from");
-                  $('.avaliable_bike').text(response['predict_info'][time_index+(from*12)].count)
+                  $('.avaliable_bike').text(response['predict_info'][time_index+(from*12)])
                   $('.datetime').text(moment(response['time_now']).add(from,'hours').calendar());
-                  if(response['predict_info'][time_index+(from*12)].count < 5){
+                  if(response['predict_info'][time_index+(from*12)] < 5){
                     $('.bike_img > img').attr('src','styles/cond_bad.png')
-                  }else if(response['predict_info'][time_index+(from*12)].count < 15){
-                    $('.bike_img > img').attr('src','styles/con_mid.png')
+                  }else if(response['predict_info'][time_index+(from*12)] < 15){
+                    $('.bike_img > img').attr('src','styles/cond_mid.png')
                   }else{
                     $('.bike_img > img').attr('src','styles/cond_good.png')
                   }

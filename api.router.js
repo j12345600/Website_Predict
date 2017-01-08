@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('promise-mysql');
 var dbsc = require('./secret');
+var fs = require('fs');
+var moment = require('moment');
 // define the home page route
 router.get('/status', function(req, res) {
   res.setHeader('content-type', 'application/json');
@@ -27,6 +29,8 @@ router.get('/get_info',function(req,res){
             result.current['count']=parseInt(rows[0].available);
             result.current['temp']=parseInt(rows[0].Temp);
             result.current['status']=rows[0].Weather;
+            result.predict_info = JSON.parse(fs.readFileSync('./public/data/station_predict/'+id.toString()+'.json', 'utf8')).data;
+            result.time_now = moment().format('YYYY-MM-DD HH:mm:ss');
             res.setHeader('content-type','application/json');
             res.send(JSON.stringify(result));
           }

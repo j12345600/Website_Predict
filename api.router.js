@@ -30,7 +30,7 @@ router.get('/get_info',function(req,res){
             result.current['temp']=parseInt(rows[0].Temp);
             result.current['status']=rows[0].Weather;
             result.predict_info = JSON.parse(fs.readFileSync('./public/data/station_predict/'+id.toString()+'.json', 'utf8')).data;
-            result.time_now = moment().format('YYYY-MM-DD HH:mm:ss');
+            result.time_now = moment().add(8, 'h').format('YYYY-MM-DD HH:mm:ss');
             res.setHeader('content-type','application/json');
             res.send(JSON.stringify(result));
           }
